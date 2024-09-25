@@ -1,17 +1,17 @@
-public class App {
+public class RspApp {
 
     private Empleado empleado;
     private GestorSalario gestorSalario;
     private ImpresoraDetalles impresoraDetalles;
 
-    public App (Empleado empleado, GestorSalario gestorSalario, ImpresoraDetalles impresoraDetalles){
+    public RspApp (Empleado empleado, GestorSalario gestorSalario, ImpresoraDetalles impresoraDetalles){
         this.empleado = empleado;
         this.gestorSalario = gestorSalario;
         this.impresoraDetalles = impresoraDetalles;
     }
     public static void main(String[] args) throws Exception {
 
-        App app = new App(
+        RspApp app = new RspApp(
             new Empleado("Juan Perez", 1200.00, "Director"),
             new GestorSalario(),
             new ImpresoraDetalles());
