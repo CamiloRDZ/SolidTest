@@ -1,4 +1,4 @@
-public class MostrarDetalles {
+public class ImpresoraDetalles implements ImpresoraDetallesI {
 
     public void imprimirDetalles(Empleado empleado){
 

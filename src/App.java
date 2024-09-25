@@ -1,16 +1,26 @@
 public class App {
+
+    private Empleado empleado;
+    private GestorSalario gestorSalario;
+    private ImpresoraDetalles impresoraDetalles;
+
+    public App (Empleado empleado, GestorSalario gestorSalario, ImpresoraDetalles impresoraDetalles){
+        this.empleado = empleado;
+        this.gestorSalario = gestorSalario;
+        this.impresoraDetalles = impresoraDetalles;
+    }
     public static void main(String[] args) throws Exception {
+
+        App app = new App(
+            new Empleado("Juan Perez", 1200.00, "Director"),
+            new GestorSalario(),
+            new ImpresoraDetalles());
         
-        // Llamando la clase empleado para crear un nuevo empleado
-        Empleado empleado = new Empleado("Juan Perez", 1200.00, "Director");
+        // Se llama a la clase GestorSalario y se le pasa el empleado y el porcentaje de aumento
+        app.gestorSalario.aumentarSalario(app.empleado, 50);
 
-        // llamado a la clase para aumentar salario
-        Salario salario = new Salario();
-        salario.aumentarSalario(empleado, 50);
-
-        // Se llama a la clase MostrarDetalles para mostrar los datos del empleado
-        MostrarDetalles detalles = new MostrarDetalles();
-        detalles.imprimirDetalles(empleado);
+        // Se llama a la clase ImpresoraDetalles para mostrar los datos del empleado
+        app.impresoraDetalles.imprimirDetalles(app.empleado);
         
     }
 }
